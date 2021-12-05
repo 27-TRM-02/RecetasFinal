@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="file:/home/trm/NetBeansProjects/Recetas_Final/../../Documents/DAM/Acceso%20Datos/practicaFinal/recetas.xsd" uri="xml-resources/jaxb/recetas_binding/recetas.xsd"/>
+</catalog>

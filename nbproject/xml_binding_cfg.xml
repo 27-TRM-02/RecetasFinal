@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<schemas xmlns='http://xml.netbeans.org/schema/JAXBWizConfig' destdir='build/generated-sources/jaxb' projectName='Recetas_Final' version='1.0'>
+	<schema type='-xmlschema' package='recetas' name='recetas_binding'>
+		<xjc-options>
+		</xjc-options>
+		<schema-sources>
+			<schema-source location='xml-resources/jaxb/recetas_binding/recetas.xsd' origLocation='../../Documents/DAM/Acceso Datos/practicaFinal/recetas.xsd'/>
+		</schema-sources>
+		<bindings>
+		</bindings>
+		<catalog/>
+	</schema>
+</schemas>
