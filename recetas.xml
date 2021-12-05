@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<recetas xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="recetas.xsd">
+    <receta id="1">
+        <nombre>Tarta de chocolate</nombre>
+        <tipo definicion="postre"/>
+        <dificultad>Fácil</dificultad>
+        <calorias>600</calorias>
+        <tiempo>45 minutos</tiempo>
+        <elaboracion>Horno</elaboracion>
+        <ingredientes>
+            <ingrediente cantidad="250 gramos">
+                Cola-Cao
+            </ingrediente>
+            <ingrediente cantidad="200 gramos">
+                Mantequilla
+            </ingrediente>
+            <ingrediente cantidad="1 vaso">
+                Harina
+            </ingrediente>
+            <ingrediente cantidad="1 vaso">
+                Azúcar
+            </ingrediente>
+            <ingrediente cantidad="3">
+                Huevos
+            </ingrediente>
+        </ingredientes>
+    </receta>
+    <receta id="2">
+        <nombre>Tiramisú</nombre>
+        <tipo definicion="postre"/>
+        <dificultad>Media</dificultad>
+        <calorias>450</calorias>
+        <tiempo>7 horas</tiempo>
+        <elaboracion>Microondas</elaboracion>
+        <ingredientes>
+            <ingrediente cantidad="24">
+                Bizcochos blandos
+            </ingrediente>
+            <ingrediente cantidad="100 gramos">
+                Cobertura valor
+            </ingrediente>
+            <ingrediente cantidad="0.5 vaso">
+                Azúcar
+            </ingrediente>
+            <ingrediente cantidad="1 tazon">
+                Café solo
+            </ingrediente>
+            <ingrediente cantidad="3">
+                Huevos
+            </ingrediente>
+            <ingrediente cantidad="Muy poco; al gusto">
+                Licor
+            </ingrediente>
+            <ingrediente cantidad="0.3 litros">
+                Nata líquida
+            </ingrediente>
+            <ingrediente cantidad="250 gramos">
+                Queso mascarpone
+            </ingrediente>
+        </ingredientes>
+    </receta>
+</recetas>
