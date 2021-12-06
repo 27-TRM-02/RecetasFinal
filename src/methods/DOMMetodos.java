@@ -1,8 +1,9 @@
 package methods;
 
-
 //import com.sun.org.apache.xml.internal.serialize.OutputFormat;
 //import com.sun.org.apache.xml.internal.serialize.XMLSerializer;
+import com.sun.org.apache.xml.internal.serialize.OutputFormat;
+import com.sun.org.apache.xml.internal.serialize.XMLSerializer;
 import jFrames.MainWindow;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -50,12 +51,11 @@ public class DOMMetodos {
         }
     }
 
-    public int addRecetaDOM(String id, String nombre, String tipo, String dificultad, String calorias, String tiempo, String elaboracion, String[] cantidad, String[] ingredientes) {
+    public int addRecetaDOM(String id, String nombre, String tipo, String dificultad, String calorias, String tiempo, String elaboracion, String[] cantidades, String[] ingredientes) {
         try {
-            System.err.println("Los muertos de Carmen");
             Node nReceta = doc.createElement("receta");
             ((Element) nReceta).setAttribute("id", id);
-            
+
             Node nNombre = doc.createElement("nombre");
             Node nNombre_text = doc.createTextNode(nombre);
             nNombre.appendChild(nNombre_text);
@@ -82,7 +82,7 @@ public class DOMMetodos {
             Node nIngredientes = doc.createElement("ingredientes");
             for (int i = 0; i < ingredientes.length; i++) {
                 Node nIngrediente = doc.createElement("ingrediente");
-                ((Element) nIngrediente).setAttribute("cantidad", cantidad[i]);
+                ((Element) nIngrediente).setAttribute("cantidad", cantidades[i]);
                 Node nIngrediente_text = doc.createTextNode(ingredientes[i]);
                 nIngrediente.appendChild(nIngrediente_text);
                 nIngredientes.appendChild(nIngrediente);
@@ -95,16 +95,31 @@ public class DOMMetodos {
             nReceta.appendChild(nTiempo);
             nReceta.appendChild(nElaboracion);
             nReceta.appendChild(nIngredientes);
-            
+
             Node nRecetas = doc.getFirstChild();
             nRecetas.appendChild(nReceta);
-            
+
             return 0;
         } catch (DOMException e) {
             System.out.println(e.toString());
             return -1;
         }
     }
-    
+
+    public int guardarDOMcomoFile(File archivo) {
+        try {
+            OutputFormat format = new OutputFormat(doc);
+            format.setIndenting(true);
+            // salida indentada
+            format.setIndenting(true);
+            // Escribo contenido en el File
+            XMLSerializer serializer = new XMLSerializer(new FileOutputStream(archivo), format);
+            serializer.serialize(doc);
+            // Se ha ejecutado correctamente
+            return 0;
+        } catch (IOException e) {
+            return 1;
+        }
+    }
 
 }

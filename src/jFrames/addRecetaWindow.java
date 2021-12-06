@@ -476,7 +476,7 @@ public class addRecetaWindow extends javax.swing.JFrame {
         String dificultad = dificultadText.getText();
         String tiempo = tiempoText.getText();
         String elaboracion = elaboracionText.getText();
-        String[] cantidad = null;
+        String[] cantidad = new String[9];
         if (!"".equals(cant1Text.getText())){
             cantidad[0] = cant1Text.getText();
         }
@@ -505,7 +505,7 @@ public class addRecetaWindow extends javax.swing.JFrame {
             cantidad[8] = cant9Text.getText();
         }
 
-        String[] ingredientes = null;
+        String[] ingredientes = new String[9];
         if (!"".equals(ing1Text.getText())){
             ingredientes[0] = ing1Text.getText();
         }
@@ -534,13 +534,17 @@ public class addRecetaWindow extends javax.swing.JFrame {
             ingredientes[8] = ing9Text.getText();
         }
 
-        int res = domMetodos.addRecetaDOM(id, nombre, tipo, dificultad, calorias, tiempo, elaboracion, cantidad, ingredientes);
-
-        if(res==0){
-            jLabel8.setText("Ha ido bien");
-        } else {
-            jLabel8.setText("MAAAAAAAL");
+        int res = MainWindow.domMetodos.addRecetaDOM(id, nombre, tipo, dificultad, calorias, tiempo, elaboracion, cantidad, ingredientes);
+        
+        if (res==0){
+            MainWindow.domMetodos.guardarDOMcomoFile(MainWindow.recetasFile);
+            
+            MainWindow.domMetodos.abrir_XML_DOM(MainWindow.recetasFile);
+            MainWindow.saxMetodos.abrir_XML_SAX(MainWindow.recetasFile);
+            MainWindow.xpathMetodos.abrir_XML_XPATH(MainWindow.recetasFile);
+            MainWindow.jaxbMetodos.abrir_XML_JAXB(MainWindow.recetasFile);
         }
+        this.setVisible(false);
     }//GEN-LAST:event_addRecetaButtonActionPerformed
 
     /**
