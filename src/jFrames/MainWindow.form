@@ -88,9 +88,9 @@
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="estadoLabel" min="-2" pref="262" max="-2" attributes="0"/>
-                      <Component id="jScrollPane" min="-2" pref="286" max="-2" attributes="0"/>
+                      <Component id="jScrollPane" pref="286" max="32767" attributes="0"/>
                       <Component id="mostrarSaxButton" alignment="0" max="32767" attributes="0"/>
+                      <Component id="estadoLabel" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -99,7 +99,7 @@
                       <Component id="jLabel2" alignment="1" max="32767" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="ingredienteButton" alignment="0" min="-2" pref="165" max="-2" attributes="0"/>
+                              <Component id="elaboracionButton" alignment="0" min="-2" pref="165" max="-2" attributes="0"/>
                               <Component id="nombreButton" min="-2" pref="165" max="-2" attributes="0"/>
                               <Component id="caloriasButton" alignment="0" min="-2" pref="165" max="-2" attributes="0"/>
                               <Component id="tipoButton" alignment="0" min="-2" pref="165" max="-2" attributes="0"/>
@@ -120,26 +120,19 @@
                           <Component id="modificarButton" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                                  <Component id="idText" max="32767" attributes="0"/>
-                              </Group>
-                              <Component id="nombreModButton" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Component id="tiempoModButton" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              </Group>
-                              <Group type="102" attributes="0">
-                                  <Component id="jLabel3" min="-2" pref="71" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="nuevoText" max="32767" attributes="0"/>
-                              </Group>
-                          </Group>
+                          <Component id="nombreModButton" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                          <Component id="tiempoModButton" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="idText" min="-2" pref="141" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
+                          <Component id="jLabel3" min="-2" pref="71" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="nuevoText" min="-2" pref="157" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -170,7 +163,7 @@
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="ingredienteButton" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                              <Component id="elaboracionButton" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                               <Component id="consultaText" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
@@ -195,9 +188,9 @@
                               <Component id="jLabel4" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="tiempoModButton" alignment="1" min="-2" pref="37" max="-2" attributes="0"/>
-                              <Component id="nombreModButton" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
+                              <Component id="nombreModButton" min="-2" pref="37" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -254,11 +247,20 @@
           </SubComponents>
         </Container>
         <Component class="javax.swing.JLabel" name="estadoLabel">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Ubuntu" size="14" style="2"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="SELECCIONA FICHERO XML"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="nuevaRecetaButton">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="1" green="1" red="1" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Ubuntu" size="18" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="fe" green="fe" red="fe" type="rgb"/>
@@ -300,12 +302,12 @@
             <Property name="text" type="java.lang.String" value="Por Nombre"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JRadioButton" name="ingredienteButton">
+        <Component class="javax.swing.JRadioButton" name="elaboracionButton">
           <Properties>
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
               <ComponentRef name="consultasButtonGroup"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Por Ingrediente"/>
+            <Property name="text" type="java.lang.String" value="Por Elaboraci&#xf3;n"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JRadioButton" name="tipoButton">

@@ -46,7 +46,7 @@ public class MainWindow extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         consultaText = new javax.swing.JTextField();
         nombreButton = new javax.swing.JRadioButton();
-        ingredienteButton = new javax.swing.JRadioButton();
+        elaboracionButton = new javax.swing.JRadioButton();
         tipoButton = new javax.swing.JRadioButton();
         caloriasButton = new javax.swing.JRadioButton();
         jLabel5 = new javax.swing.JLabel();
@@ -88,7 +88,11 @@ public class MainWindow extends javax.swing.JFrame {
         textAreaDatos.setRows(5);
         jScrollPane.setViewportView(textAreaDatos);
 
+        estadoLabel.setFont(new java.awt.Font("Ubuntu", 2, 14)); // NOI18N
+        estadoLabel.setText("SELECCIONA FICHERO XML");
+
         nuevaRecetaButton.setBackground(new java.awt.Color(1, 1, 1));
+        nuevaRecetaButton.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
         nuevaRecetaButton.setForeground(new java.awt.Color(254, 254, 254));
         nuevaRecetaButton.setText("Nueva Receta");
         nuevaRecetaButton.addActionListener(new java.awt.event.ActionListener() {
@@ -114,8 +118,8 @@ public class MainWindow extends javax.swing.JFrame {
         consultasButtonGroup.add(nombreButton);
         nombreButton.setText("Por Nombre");
 
-        consultasButtonGroup.add(ingredienteButton);
-        ingredienteButton.setText("Por Ingrediente");
+        consultasButtonGroup.add(elaboracionButton);
+        elaboracionButton.setText("Por Elaboración");
 
         consultasButtonGroup.add(tipoButton);
         tipoButton.setText("Por Tipo");
@@ -179,9 +183,9 @@ public class MainWindow extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(estadoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(mostrarSaxButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 286, Short.MAX_VALUE)
+                    .addComponent(mostrarSaxButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(estadoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(nuevaRecetaButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -189,7 +193,7 @@ public class MainWindow extends javax.swing.JFrame {
                     .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ingredienteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(elaboracionButton, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(nombreButton, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(caloriasButton, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(tipoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -205,21 +209,18 @@ public class MainWindow extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(modificarButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addGap(27, 27, 27)
-                                .addComponent(idText))
-                            .addComponent(nombreModButton))
-                        .addGap(38, 38, 38)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(tiempoModButton)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(nuevoText)))))
+                        .addComponent(nombreModButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tiempoModButton)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(idText, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(63, 63, 63)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(nuevoText, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -243,7 +244,7 @@ public class MainWindow extends javax.swing.JFrame {
                             .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(ingredienteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(elaboracionButton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(consultaText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -263,8 +264,8 @@ public class MainWindow extends javax.swing.JFrame {
                             .addComponent(idText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(tiempoModButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tiempoModButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(nombreModButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -329,10 +330,23 @@ public class MainWindow extends javax.swing.JFrame {
             mostrarSaxButton.setEnabled(true);
             consultaButton.setEnabled(true);
             modificarButton.setEnabled(true);
+            MenuSaveXML.setVisible(true);
         } else {
             estadoLabel.setText("No se ha podido abrir");
         }
     }//GEN-LAST:event_MenuAbrirXMLActionPerformed
+
+    public static int abrirDatos() {
+        try {
+            domMetodos.abrir_XML_DOM(recetasFile);
+            xpathMetodos.abrir_XML_XPATH(recetasFile);
+            saxMetodos.abrir_XML_SAX(recetasFile);
+            jaxbMetodos.abrir_XML_JAXB(recetasFile);
+            return 0;
+        } catch (Exception e) {
+            return -1;
+        }
+    }
 
     private void mostrarSaxButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mostrarSaxButtonActionPerformed
         textAreaDatos.setText(saxMetodos.recorrerSAX());
@@ -348,6 +362,15 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void consultaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultaButtonActionPerformed
         // TODO add your handling code here:
+        if (nombreButton.isSelected()) {
+            textAreaDatos.setText(xpathMetodos.consultaNombre(consultaText.getText()));
+        } else if (tipoButton.isSelected()) {
+            textAreaDatos.setText(xpathMetodos.consultaTipo(consultaText.getText()));
+        } else if (elaboracionButton.isSelected()) {
+            textAreaDatos.setText(xpathMetodos.consultaElaboracion(consultaText.getText()));
+        } else if (caloriasButton.isSelected()) {
+            textAreaDatos.setText(xpathMetodos.consultaCalorias(consultaText.getText()));
+        }
     }//GEN-LAST:event_consultaButtonActionPerformed
 
     private void nombreModButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreModButtonActionPerformed
@@ -368,12 +391,12 @@ public class MainWindow extends javax.swing.JFrame {
             jaxbMetodos.cambiarTiempo(id, nuevo);
         }
         jaxbMetodos.guardarToXML(recetasFile);
-        
+
         domMetodos.abrir_XML_DOM(recetasFile);
         saxMetodos.abrir_XML_SAX(recetasFile);
         xpathMetodos.abrir_XML_XPATH(recetasFile);
         jaxbMetodos.abrir_XML_JAXB(recetasFile);
-        
+
         textAreaDatos.setText(saxMetodos.recorrerSAX());
     }//GEN-LAST:event_modificarButtonActionPerformed
 
@@ -395,6 +418,7 @@ public class MainWindow extends javax.swing.JFrame {
         nuevaRecetaButton.setEnabled(false);
         consultaButton.setEnabled(false);
         modificarButton.setEnabled(false);
+        MenuSaveXML.setVisible(false);
     }
 
     public static void main(String args[]) {
@@ -439,9 +463,9 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JTextField consultaText;
     private javax.swing.ButtonGroup consultasButtonGroup;
     private javax.swing.JRadioButton dificultadModButton;
+    private javax.swing.JRadioButton elaboracionButton;
     private javax.swing.JLabel estadoLabel;
     private javax.swing.JTextField idText;
-    private javax.swing.JRadioButton ingredienteButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
